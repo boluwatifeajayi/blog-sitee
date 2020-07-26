@@ -1,15 +1,14 @@
 <?php 
-    $host = 'vlvlnl1grfzh34vj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com';
-    $user = 'l8qcac2a3900uc0r';
-    $pass = 'yxk6ohjrugyckyhh';
-    $db_name = 'xql1yvg1u9vslaxh';
+$hostname = 'vlvlnl1grfzh34vj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com';
+$username = 'l8qcac2a3900uc0r';
+$password = 'yxk6ohjrugyckyhh';
+$database = 'xql1yvg1u9vslaxh';
 
-    $conn = new MySQLi($host, $user, $pass, $db_name);
+    // Create connection
+$conn = new mysqli($hostname, $username, $password, $database);
 
-    if($conn->connect_error){
-        die('Database connection error: ' . $conn->connect_error);
-    }else{
-       // echo "Db connection successful";
-    }
-
-?>
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connection was successfully established!";
